@@ -1,0 +1,13 @@
+{
+    "message": "Payment not found",
+    "error": "not_found",
+    "status": 404,
+    "cause": [
+        {
+            "code": 2000,
+            "description": "Payment not found",
+            "data": "01-07-2023T00:19:18UTC;68aeed1b-8c32-4b9d-b970-58bcbd0c3d44"
+        }
+    ]
+}
+
