@@ -19,8 +19,8 @@ def process_payment(request_values):
     payment_response = sdk.payment().create(payment_data)
     payment = payment_response["response"]
 
-    print("status =>", payment["status"])
-    print("status_detail =>", payment["status_detail"])
-    print("id=>", payment["id"])
+    # print("status =>", payment["status"])
+    # print("status_detail =>", payment["status_detail"])
+    # print("id=>", payment["id"])
 
     return payment

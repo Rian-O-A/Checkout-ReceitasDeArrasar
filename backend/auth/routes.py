@@ -30,5 +30,5 @@ def add_income():
     response = pesquisar_pagamento(payment["id"])
     if response[0] == 200:
         enviar_email(response[1])
-        print('email enviado!')
+        
     return jsonify(payment), 200
