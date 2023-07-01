@@ -8945,8 +8945,6 @@ body {
     align-self: center;
     min-width: 0;
     order: 6;
-    min-height: 42px;
-    max-height: 42px;
     width: max-content;
     flex-grow: 0;
     height: max-content;
