@@ -2,7 +2,7 @@ const mercadoPagoPublicKey = document.getElementById("mercado-pago-public-key").
 const mercadopago = new MercadoPago(mercadoPagoPublicKey);
 let cardPaymentBrickController;
 
-async function loadPaymentForm() {
+async function loadPaymentForm(type) {
     const productCost = document.getElementById('amount').value;
     const settings = {
         initialization: {
@@ -22,14 +22,16 @@ async function loadPaymentForm() {
         locale: 'pt-BR',
         customization: {
             paymentMethods: {
-                maxInstallments: 5
+                ticket: "all",
+                bankTransfer: "all",
+                creditCard: "all",
             },
             visual: {
                 style: {
                     theme: 'dark',
                     customVariables: {
-                        formBackgroundColor: '#1d2431',
-                        baseColor: 'aquamarine'
+                        formBackgroundColor: 'maroon',
+                        baseColor: '#fff'
                     }
                 }
             }
@@ -37,10 +39,11 @@ async function loadPaymentForm() {
     }
 
     const bricks = mercadopago.bricks();
-    cardPaymentBrickController = await bricks.create('cardPayment', 'mercadopago-bricks-contaner__PaymentCard', settings);
+    cardPaymentBrickController = await bricks.create("payment", 'mercadopago-bricks-contaner__PaymentCard', settings);
 };
 
 const proccessPayment = (cardFormData) => {
+    console.log(cardFormData)
     fetch("/process_payment", {
         method: "POST",
         headers: {
@@ -71,10 +74,17 @@ const proccessPayment = (cardFormData) => {
 }
 
 // Handle transitions
-document.getElementById('checkout-btn').addEventListener('click', function(){
+document.getElementById('checkout-btn-card').addEventListener('click', function(){
     $('.container__cart').fadeOut(500);
     setTimeout(() => {
-        loadPaymentForm();
+        loadPaymentForm('cardPayment');
+        $('.container__payment').show(500).fadeIn();
+    }, 500);
+});
+document.getElementById('checkout-btn-pix').addEventListener('click', function(){
+    $('.container__cart').fadeOut(500);
+    setTimeout(() => {
+        loadPaymentForm('pix');
         $('.container__payment').show(500).fadeIn();
     }, 500);
 });
