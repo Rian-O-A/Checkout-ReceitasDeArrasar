@@ -1,8 +1,8 @@
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 
-load_dotenv()
+# load_dotenv()
 
 token = os.environ['access_token']
 password = os.environ['password']
