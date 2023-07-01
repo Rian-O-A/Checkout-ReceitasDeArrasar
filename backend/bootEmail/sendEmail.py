@@ -6,11 +6,11 @@ from backend.credentials import password
 
 def enviar_email(dest):
    
-   
+#    'superrecgt@gmail.com'
     msg = email.message.Message()
     msg['Subject'] = '📧🍳 Ebook "Receitas para Arrasar" do Grupo Alcarroz Entregue! 🍳📧'
     msg['From'] = 'grupoalcarroz@gmail.com'
-    msg['To'] = 'rianoliveira38@gmail.com'
+    msg['To'] = 'superrecgt@gmail.com'
     msg.add_header('Content-Type', 'text/html')
     msg.set_payload(corpo_email)
 
