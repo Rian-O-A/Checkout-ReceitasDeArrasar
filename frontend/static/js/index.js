@@ -74,14 +74,7 @@ const proccessPayment = (cardFormData) => {
 }
 
 // Handle transitions
-document.getElementById('checkout-btn-card').addEventListener('click', function(){
-    $('.container__cart').fadeOut(500);
-    setTimeout(() => {
-        loadPaymentForm('cardPayment');
-        $('.container__payment').show(500).fadeIn();
-    }, 500);
-});
-document.getElementById('checkout-btn-pix').addEventListener('click', function(){
+document.getElementById('checkout-btn').addEventListener('click', function(){
     $('.container__cart').fadeOut(500);
     setTimeout(() => {
         loadPaymentForm('pix');
