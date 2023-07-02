@@ -3,6 +3,7 @@ from backend.Payment.obterPagamen import pesquisar_pagamento
 from backend.Payment.processPayment import process_payment 
 from backend.bootEmail.sendEmail import enviar_email
 from backend.credentials import public_key
+import json
 
 
 auth_route = Blueprint('auth', __name__)
@@ -27,8 +28,9 @@ def sendProduct():
 def add_income():
     request_values = request.get_json()
     payment = process_payment(request_values)
+    json.dump(payment, open('payment.json', 'w', encoding="UTF-8"), indent=6, ensure_ascii=False)
     response = pesquisar_pagamento(payment["id"])
     if response[0] == 200:
-        enviar_email(response[1])
+        enviar_email(response[1], None)
         
-    return jsonify(payment), 200
+    return jsonify(payment), response[0]

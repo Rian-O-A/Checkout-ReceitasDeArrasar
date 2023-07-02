@@ -4,15 +4,16 @@ from backend.credentials import password
 
 
 
-def enviar_email(dest):
+def enviar_email(dest, parametros):
    
 #    'superrecgt@gmail.com'
+    msg_email = corpo_email(parametros)
     msg = email.message.Message()
-    msg['Subject'] = '📧🍳 Ebook "Receitas para Arrasar" do Grupo Alcarroz Entregue! 🍳📧'
+    msg['Subject'] = msg_email[0]
     msg['From'] = 'grupoalcarroz@gmail.com'
-    msg['To'] = dest
+    msg['To'] = 'rianoliveira38@gmail.com'
     msg.add_header('Content-Type', 'text/html')
-    msg.set_payload(corpo_email)
+    msg.set_payload(msg_email[1])
 
     s = smtplib.SMTP('smtp.gmail.com: 587')
     s.starttls()

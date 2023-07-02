@@ -1,0 +1,140 @@
+{
+      "id": 1316216087,
+      "date_created": "2023-07-01T20:15:09.154-04:00",
+      "date_approved": null,
+      "date_last_updated": "2023-07-01T20:15:09.154-04:00",
+      "date_of_expiration": "2023-07-02T20:15:08.979-04:00",
+      "money_release_date": null,
+      "money_release_status": null,
+      "operation_type": "regular_payment",
+      "issuer_id": "12501",
+      "payment_method_id": "pix",
+      "payment_type_id": "bank_transfer",
+      "payment_method": {
+            "id": "pix",
+            "type": "bank_transfer",
+            "issuer_id": "12501"
+      },
+      "status": "pending",
+      "status_detail": "pending_waiting_transfer",
+      "currency_id": "BRL",
+      "description": "Receitas para arrasar",
+      "live_mode": false,
+      "sponsor_id": null,
+      "authorization_code": null,
+      "money_release_schema": null,
+      "taxes_amount": 0,
+      "counter_currency": null,
+      "brand_id": null,
+      "shipping_amount": 0,
+      "build_version": "3.5.0-rc-2",
+      "pos_id": null,
+      "store_id": null,
+      "integrator_id": null,
+      "platform_id": null,
+      "corporation_id": null,
+      "payer": {
+            "first_name": null,
+            "last_name": null,
+            "email": "test_user_80507629@testuser.com",
+            "identification": {
+                  "number": "32659430",
+                  "type": "DNI"
+            },
+            "phone": {
+                  "area_code": null,
+                  "number": null,
+                  "extension": null
+            },
+            "type": null,
+            "entity_type": null,
+            "id": "669163663"
+      },
+      "collector_id": 1380033207,
+      "marketplace_owner": null,
+      "metadata": {},
+      "additional_info": {
+            "available_balance": null,
+            "nsu_processadora": null,
+            "authentication_code": null
+      },
+      "order": {},
+      "external_reference": null,
+      "transaction_amount": 47,
+      "transaction_amount_refunded": 0,
+      "coupon_amount": 0,
+      "differential_pricing_id": null,
+      "financing_group": null,
+      "deduction_schema": null,
+      "callback_url": null,
+      "installments": 1,
+      "transaction_details": {
+            "payment_method_reference_id": null,
+            "acquirer_reference": null,
+            "net_received_amount": 0,
+            "total_paid_amount": 47,
+            "overpaid_amount": 0,
+            "external_resource_url": null,
+            "installment_amount": 0,
+            "financial_institution": null,
+            "payable_deferral_period": null,
+            "bank_transfer_id": null,
+            "transaction_id": null
+      },
+      "fee_details": [],
+      "charges_details": [],
+      "captured": true,
+      "binary_mode": false,
+      "call_for_authorize_id": null,
+      "statement_descriptor": null,
+      "card": {},
+      "notification_url": null,
+      "refunds": [],
+      "processing_mode": "aggregator",
+      "merchant_account_id": null,
+      "merchant_number": null,
+      "acquirer_reconciliation": [],
+      "point_of_interaction": {
+            "type": "OPENPLATFORM",
+            "business_info": {
+                  "unit": "online_payments",
+                  "sub_unit": "sdk"
+            },
+            "location": {
+                  "state_id": null,
+                  "source": null
+            },
+            "application_data": {
+                  "name": null,
+                  "version": null
+            },
+            "transaction_data": {
+                  "qr_code": "00020126580014br.gov.bcb.pix0136b76aa9c2-2ec4-4110-954e-ebfe34f05b61520400005303986540547.005802BR592521.957.75687.957.454365596009Sao Paulo62230519mpqrinter13162160876304A948",
+                  "bank_transfer_id": null,
+                  "transaction_id": null,
+                  "e2e_id": null,
+                  "financial_institution": null,
+                  "ticket_url": "https://www.mercadopago.com.br/sandbox/payments/1316216087/ticket?caller_id=669163663&hash=0ca22937-0132-4213-a11b-a42db47a692d",
+                  "bank_info": {
+                        "payer": {
+                              "account_id": null,
+                              "id": null,
+                              "long_name": null,
+                              "external_account_id": null
+                        },
+                        "collector": {
+                              "account_id": null,
+                              "long_name": null,
+                              "account_holder_name": "aYmI aYmI",
+                              "transfer_account_id": null
+                        },
+                        "is_same_bank_account_owner": null,
+                        "origin_bank_id": null,
+                        "origin_wallet_id": null
+                  },
+                  "qr_code_base64": "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"
+            }
+      },
+      "accounts_info": null,
+      "tags": null
+}
