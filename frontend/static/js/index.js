@@ -51,30 +51,36 @@ const proccessPayment = (cardFormData) => {
         },
         body: JSON.stringify(cardFormData),
     })
-    .then(response => {
-        return response.json();
-    })
-    .then(result => {
-        if(!result.hasOwnProperty("error_message")) {
-            document.getElementById("payment-id").innerText = result.id;
-            document.getElementById("payment-status").innerText = result.status;
-            document.getElementById("payment-detail").innerText = result.detail;
-            $('.container__payment').fadeOut(500);
-            setTimeout(() => { $('.container__result').show(500).fadeIn(); }, 500);
-        } else {
-            alert(JSON.stringify({
-                status: result.status,
-                message: result.error_message
-            }))
-        }
-    })
-    .catch(error => {
-        alert("Unexpected error\n"+JSON.stringify(error));
-    });
+        .then(response => {
+            return response.json();
+        })
+        .then(result => {
+            if (!result.hasOwnProperty("error_message")) {
+                document.getElementById("payment-id").innerText = result.id;
+                document.getElementById("payment-status").innerText = result.status;
+                if (result?.point_of_interaction?.transaction_data?.qr_code_base64) {
+                    const qrcode = document.getElementById("qrcode-pix")
+                    const pixkey = document.getElementById('pix-key')
+                    qrcode.src = "data:image/png;base64," + result?.point_of_interaction?.transaction_data?.qr_code_base64;
+                    qrcode.style.display = "block"
+                    pixkey.innerHTML = "<b>Chave Pix:</b> " + result?.point_of_interaction?.transaction_data?.qr_code
+                }
+                $('.container__payment').fadeOut(500);
+                setTimeout(() => { $('.container__result').show(500).fadeIn(); }, 500);
+            } else {
+                alert(JSON.stringify({
+                    status: result.status,
+                    message: result.error_message
+                }))
+            }
+        })
+        .catch(error => {
+            alert("Unexpected error\n" + JSON.stringify(error));
+        });
 }
 
 // Handle transitions
-document.getElementById('checkout-btn').addEventListener('click', function(){
+document.getElementById('checkout-btn').addEventListener('click', function () {
     $('.container__cart').fadeOut(500);
     setTimeout(() => {
         loadPaymentForm('pix');
@@ -82,13 +88,13 @@ document.getElementById('checkout-btn').addEventListener('click', function(){
     }, 500);
 });
 
-document.getElementById('go-back').addEventListener('click', function(){
+document.getElementById('go-back').addEventListener('click', function () {
     $('.container__payment').fadeOut(500);
     setTimeout(() => { $('.container__cart').show(500).fadeIn(); }, 500);
 });
 
 // Handle price update
-function updatePrice(){
+function updatePrice() {
     let unitPrice = document.getElementById('unit-price').innerText;
 
     document.getElementById('cart-total').innerText = '$ ' + unitPrice;

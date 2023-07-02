@@ -1,181 +1,153 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Receitas Para arrasar</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}" />
-    <link rel="icon" type="image/png"
-    href="/static/img/icon.png">
-  
-  </head>
-  <body>
-    <input
-      id="mercado-pago-public-key"
-      value="{{public_key}}"
-      type="hidden"
-    />
-    <main>
-      <!-- Shopping Cart -->
-      <section class="shopping-cart dark">
-        <div class="container container__cart">
-          <div class="block-heading">
-            <h2>Ebook Receitas para Arrasar</h2>
-            <p>
-              Ebook feito com amor e dedicação para todos os amantes e curiosos na culinaria!
-            </p>
-          </div>
-          <div class="content">
-            <div class="row">
-              <div class="col-md-12 col-lg-8">
-                <div class="items">
-                  <div class="product">
-                    <div class="info">
-                      <div class="product-details">
-                        <div class="row justify-content-md-center" >
-                          <div class="col-md-3" >
-                            <img
-                              class="img-fluid mx-auto d-block image"
-                              src="{{ url_for('static', filename='img/product.png') }}"
-                            />
+
+<head>
+  <title>Receitas Para arrasar</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}" />
+  <link rel="icon" type="image/png" href="/static/img/icon.png">
+
+</head>
+
+<body style="max-width: 100%;">
+  <input id="mercado-pago-public-key" value="{{public_key}}" type="hidden" />
+  <main>
+    <!-- Shopping Cart -->
+    <section class="shopping-cart dark">
+      <div class="container container__cart">
+        <div class="block-heading">
+          <h2>Ebook Receitas para Arrasar</h2>
+          <p>
+            Ebook feito com amor e dedicação para todos os amantes e curiosos na culinaria!
+          </p>
+        </div>
+        <div class="content" style="padding: 0;">
+          <div class="row">
+            <div class="col-md-12 col-lg-8">
+              <div class="items">
+                <div class="product">
+                  <div class="info">
+                    <div class="product-details">
+                      <div class="row justify-content-md-center">
+                        <div class="col-md-3">
+                          <img class="img-fluid mx-auto d-block image"
+                            src="{{ url_for('static', filename='img/product.png') }}" />
+                        </div>
+                        <div class="col-md-4 product-detail">
+                          <h5>Produto</h5>
+                          <div class="product-info">
+                            <p>
+                              <b>Descrição: </b><span>
+                                Descubra o poder das "Receitas para Arrasar" - mais de 60 receitas incríveis que vão
+                                transformar suas refeições. Dos salgados aos doces, incluindo bolos
+                                irresistíveis.</span><br />
+                              <b>Preço:</b> $ <span id="unit-price">47</span>
+                            </p>
                           </div>
-                          <div class="col-md-4 product-detail">
-                            <h5>Produto</h5>
-                            <div class="product-info">
-                              <p>
-                                <b>Descrição: </b><span>
-                                  Descubra o poder das "Receitas para Arrasar" - mais de 60 receitas incríveis que vão transformar suas refeições. Dos salgados aos doces, incluindo bolos irresistíveis.</span
-                                ><br />
-                                <b>Preço:</b> $ <span id="unit-price">47</span>
-                              </p>
-                            </div>
-                          </div>
-                          <div class="col-md-3 product-detail">
-                          
-                          </div>
+                        </div>
+                        <div class="col-md-3 product-detail">
+
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-12 col-lg-4">
-                <div class="summary">
-                  <h3>Cart</h3>
-                  <div class="summary-item">
-                    <span class="text">Subtotal</span
-                    ><span class="price" id="cart-total">R$ 47</span>
-                  </div>
-                  <button 
-                    class="btn btn-primary btn-lg btn-block"
-                    id="checkout-btn"
-                  >
-                    Comprar Agora
-                  </button>
+            </div>
+            <div class="col-md-12 col-lg-4">
+              <div class="summary">
+                <h3>Cart</h3>
+                <div class="summary-item">
+                  <span class="text">Subtotal</span><span class="price" id="cart-total">R$ 47</span>
                 </div>
+                <button class="btn btn-primary btn-lg btn-block" id="checkout-btn">
+                  Comprar Agora
+                </button>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- Payment -->
-      <section class="payment-form dark">
-        <div class="container__payment">
-          <div class="block-heading">
-            <h2>Cartão de Credito</h2>
-            <p>
-              Cole suas informações de seu cartão de cretido para efetuar o pagamento!
-            </p>
-          </div>
-          <div class="form-payment">
-            <div class="products">
-              <h2 class="title">Sumario</h2>
-              <div class="item">
-                <span class="price" id="summary-price"></span>
-                <p class="item-name">
-                  E-Book Receitas para arrasar <span id="summary-quantity"></span>
-                </p>
-              </div>
-              <div class="total">
-                Total<span class="price" id="summary-total"></span>
-              </div>
-              <input type="hidden" id="amount" />
-              <input type="hidden" id="description" />
-            </div>
-            <!-- TODO: Add payment form here -->
-            <div id="mercadopago-bricks-contaner__PaymentCard"></div>
-            <a id="go-back">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
-                viewBox="0 0 10 10"
-                class="chevron-left"
-              >
-                <path
-                  fill="maroon"
-                  fill-rule="nonzero"
-                  id="chevron_left"
-                  d="M7.05 1.4L6.2.552 1.756 4.997l4.449 4.448.849-.848-3.6-3.6z"
-                ></path>
-              </svg>
-              Voltar para Loja
-            </a>
-          </div>
-        </div>
-      </section>
-      <!-- Result -->
-      <section class="shopping-cart dark">
-        <div class="container container__result">
-          <div class="block-heading">
-            <h2>Resultado do Pagamento</h2>
-            <p>
-              Abaixo você encotra a situação de seu pagamento
-            </p>
-          </div>
-          <div class="content">
-            <div class="row">
-              <div class="col-md-12 col-lg-12">
-                <div class="items product info product-details">
-                  <div class="row justify-content-md-center">
-                    <div class="col-md-4 product-detail">
-                      <div class="product-info">
-                        <br />
-                        <p><b>ID: </b><span id="payment-id"></span></p>
-                        <p><b>Status: </b><span id="payment-status"></span></p>
-                        <p><b>Detalhe: </b><span id="payment-detail"></span></p>
-                        <img src="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"/>
-                        <br />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <div class="footer_logo">
-        <img id="horizontal_logo" src="{{ url_for('static', filename='img/horizontal_logo.png') }}" />
       </div>
-      <div class="footer_text">
-        <p>Developers Site:</p>
-        <p>
-          <a href="https://receitasdearrasar.com.br/"
-            >https://receitasdearrasar.com.br/</a
-          >
-        </p>
+    </section>
+    <!-- Payment -->
+    <section class="payment-form dark" style="padding: 0;" >
+      <div class="container__payment">
+        <div class="block-heading">
+          <h2>Cartão de Credito</h2>
+          <p>
+            Cole suas informações de seu cartão de cretido para efetuar o pagamento!
+          </p>
+        </div>
+        <div class="form-payment">
+          <div class="products">
+            <h2 class="title">Sumario</h2>
+            <div class="item">
+              <span class="price" id="summary-price"></span>
+              <p class="item-name">
+                E-Book Receitas para arrasar <span id="summary-quantity"></span>
+              </p>
+            </div>
+            <div class="total">
+              Total<span class="price" id="summary-total"></span>
+            </div>
+            <input type="hidden" id="amount" />
+            <input type="hidden" id="description" />
+          </div>
+          <!-- TODO: Add payment form here -->
+          <div id="mercadopago-bricks-contaner__PaymentCard"></div>
+          <a id="go-back">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 10 10" class="chevron-left">
+              <path fill="maroon" fill-rule="nonzero" id="chevron_left"
+                d="M7.05 1.4L6.2.552 1.756 4.997l4.449 4.448.849-.848-3.6-3.6z"></path>
+            </svg>
+            Voltar para Loja
+          </a>
+        </div>
       </div>
-    </footer>
-  </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://sdk.mercadopago.com/js/v2"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+    </section>
+    <!-- Result -->
+    <section class="shopping-cart dark" >
+      <div class="container container__result">
+        <div class="block-heading">
+          <h2>Resultado do Pagamento</h2>
+          <p>
+            Abaixo você encotra a situação de seu pagamento
+          </p>
+        </div>
+        <div class="content" style="padding: 0;">
+          <div style="padding:20px; margin:auto; display: flex; align-items:center; justify-content:center;
+            flex-direction:column; width:100%; max-width:100%;">
+            <br />
+            <p><b>ID: </b><span id="payment-id"></span></p>
+            <p><b>Status: </b><span id="payment-status"></span></p>
+            <p><b>Detalhe: </b><span id="payment-detail"></span></p>
+            <p><b>QR Code:</b></p>
+            <img id="qrcode-pix" src="data:image/png;base64," style="display: none;max-width: 40%;" />
+            <p id="pix-key" style="max-width: 40%; background-color: white; word-wrap: break-word; padding: 10px;">
+              <b>Chave
+                Pix:</b></p>
+            <br />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer_logo">
+      <img id="horizontal_logo" src="{{ url_for('static', filename='img/horizontal_logo.png') }}" />
+    </div>
+    <div class="footer_text">
+      <p>Developers Site:</p>
+      <p>
+        <a href="https://receitasdearrasar.com.br/">https://receitasdearrasar.com.br/</a>
+      </p>
+    </div>
+  </footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+
 </html>
