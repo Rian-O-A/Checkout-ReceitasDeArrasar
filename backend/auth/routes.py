@@ -35,4 +35,4 @@ def add_income():
     json.dump(request_values, open('webhook.json', 'w', encoding="UTF-8"), indent=6, ensure_ascii=False)
     
     
-    return jsonify("Message":"ok"), 200
+    return jsonify({"Message":"ok"}), 200
