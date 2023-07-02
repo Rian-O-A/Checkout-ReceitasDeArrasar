@@ -65,11 +65,18 @@ const proccessPayment = (cardFormData) => {
                 }
                 if (result?.point_of_interaction?.transaction_data?.qr_code_base64) {
                     const qrcode = document.getElementById("qrcode-pix")
+                    const pixkeyout = document.getElementById("pix-key-outside")
                     const pixkey = document.getElementById('pix-key')
                     qrcode.src = "data:image/png;base64," + result?.point_of_interaction?.transaction_data?.qr_code_base64;
                     qrcode.style.display = "block"
-                    pixkey.innerHTML = "<b>Chave Pix:</b> " + result?.point_of_interaction?.transaction_data?.qr_code
+                    pixkey.innerHTML = result?.point_of_interaction?.transaction_data?.qr_code
                     pixkey.style.display = 'block'
+                    pixkeyout.style.display = 'block'
+                    const copy = document.getElementById('copy')
+                    copy.addEventListener('click',()=>{
+                        navigator.clipboard.writeText(pixkey.innerText)
+                    })
+                    copy.style.display = 'block'
                 }
                 $('.container__payment').fadeOut(500);
                 setTimeout(() => { $('.container__result').show(500).fadeIn(); }, 500);

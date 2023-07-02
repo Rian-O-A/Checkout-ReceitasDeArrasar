@@ -124,11 +124,13 @@
             <p><b>Status: </b><span id="payment-status"></span></p>
             <p><b>QR Code:</b></p>
             <img id="qrcode-pix" src="data:image/png;base64," style="display: none;max-width: 60%;" />
-            <p id="pix-key"
+            <p id="pix-key-outside"
               style="display: none; max-width: 80%; background-color: white; word-wrap: break-word; padding: 10px;">
               <b>Chave
                 Pix:</b>
+                <p id="pix-key" style="display: none; max-width: 80%; background-color: white; word-wrap: break-word; padding: 10px;"></p>
             </p>
+            <button id="copy" style="display: block; max-width:80%" class="btn btn-primary btn-lg btn-block">Copiar código</button>
             <br />
             <p id="redirectmsg"
               style="display: none;font-size: x-large; width: 90%; padding: 20px; background-color: white;">Agora você
