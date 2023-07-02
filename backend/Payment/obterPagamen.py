@@ -20,7 +20,7 @@ def pesquisar_pagamento(id_pagamento):
           
         elif response['payment_method_id'] == 'pec':
             enviar_email(dest=response['payer']['email'], parametros={"id":id_pagamento, "url": response['transaction_details']['external_resource_url']})
-            return [202, {'status':response['status'], 'url': response['barcode']['content']}]
+            return [202, {'status':response['status'], "url": response['transaction_details']['external_resource_url']}]
             
         elif response['payment_method_id'] == 'pix':
             
