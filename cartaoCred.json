@@ -1,0 +1,18 @@
+{
+      "paymentType": "credit_card",
+      "selectedPaymentMethod": "credit_card",
+      "formData": {
+            "token": "a00b1c6d28107c40d14701973f4be062",
+            "issuer_id": "24",
+            "payment_method_id": "master",
+            "transaction_amount": 47,
+            "installments": 1,
+            "payer": {
+                  "email": "rianoliveira38@gmail.com",
+                  "identification": {
+                        "type": "CPF",
+                        "number": "12345678909"
+                  }
+            }
+      }
+}

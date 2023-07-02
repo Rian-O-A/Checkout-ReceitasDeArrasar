@@ -10,11 +10,23 @@ def pesquisar_pagamento(id_pagamento):
     if 'message' in response and 'cause' in response:
         return [response['status'], response['message']]
     elif 'approved' == response['status']:
+        enviar_email(response["payer"]["email"], None)
         return [200, response["payer"]["email"]]
     elif 'pending' == response['status']:
-        enviar_email(dest=None, parametros={"id":id_pagamento, "url": response['point_of_interaction']['transaction_data']['ticket_url']})
-        return [202, {'status':response['status'], 'url': response['point_of_interaction']['transaction_data']['ticket_url']}]
+        
+        if response['payment_method_id'] == 'bolbradesco':
+            enviar_email(dest=response['payer']['email'], parametros={"id":id_pagamento, "url": response['transaction_details']['external_resource_url']})
+            return [202, {'status':response['status'], 'barcode': response['barcode']['content']}]
+          
+        elif response['payment_method_id'] == 'pec':
+            enviar_email(dest=response['payer']['email'], parametros={"id":id_pagamento, "url": response['transaction_details']['external_resource_url']})
+            return [202, {'status':response['status'], 'url': response['barcode']['content']}]
+            
+        elif response['payment_method_id'] == 'pix':
+            
+            enviar_email(dest=response['payer']['email'], parametros={"id":id_pagamento, "url": response['point_of_interaction']['transaction_data']['ticket_url']})
+            return [202, {'status':response['status'], 'url': response['point_of_interaction']['transaction_data']['ticket_url']}]
 
-
+    
 
 

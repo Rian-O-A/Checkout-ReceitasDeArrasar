@@ -1,0 +1,112 @@
+{
+      "id": 1316217433,
+      "date_created": "2023-07-01T21:35:36.804-04:00",
+      "date_approved": null,
+      "date_last_updated": "2023-07-01T21:35:36.804-04:00",
+      "date_of_expiration": "2023-07-04T22:59:59.000-04:00",
+      "money_release_date": null,
+      "money_release_status": null,
+      "operation_type": "regular_payment",
+      "issuer_id": "2006",
+      "payment_method_id": "bolbradesco",
+      "payment_type_id": "ticket",
+      "payment_method": {
+            "id": "bolbradesco",
+            "type": "ticket",
+            "issuer_id": "2006",
+            "data": {},
+            "forward_data": {
+                  "ticket_number": "",
+                  "agreement_number": ""
+            }
+      },
+      "status": "pending",
+      "status_detail": "pending_waiting_payment",
+      "currency_id": "BRL",
+      "description": null,
+      "live_mode": false,
+      "sponsor_id": null,
+      "authorization_code": null,
+      "money_release_schema": null,
+      "taxes_amount": 0,
+      "counter_currency": null,
+      "brand_id": null,
+      "shipping_amount": 0,
+      "build_version": "3.5.0-rc-2",
+      "pos_id": null,
+      "store_id": null,
+      "integrator_id": null,
+      "platform_id": null,
+      "corporation_id": null,
+      "payer": {
+            "first_name": null,
+            "last_name": null,
+            "email": "test_user_80507629@testuser.com",
+            "identification": {
+                  "number": "32659430",
+                  "type": "DNI"
+            },
+            "phone": {
+                  "area_code": null,
+                  "number": null,
+                  "extension": null
+            },
+            "type": null,
+            "entity_type": null,
+            "id": "669163663"
+      },
+      "collector_id": 1380033207,
+      "marketplace_owner": null,
+      "metadata": {},
+      "additional_info": {
+            "available_balance": null,
+            "nsu_processadora": null,
+            "authentication_code": null
+      },
+      "order": {},
+      "external_reference": null,
+      "transaction_amount": 47,
+      "transaction_amount_refunded": 0,
+      "coupon_amount": 0,
+      "differential_pricing_id": null,
+      "financing_group": null,
+      "deduction_schema": null,
+      "barcode": {
+            "content": "23791940100000047003380261025652596500633330"
+      },
+      "installments": 1,
+      "transaction_details": {
+            "payment_method_reference_id": "10256525965",
+            "acquirer_reference": "",
+            "verification_code": "10256525965",
+            "net_received_amount": 0,
+            "total_paid_amount": 47,
+            "overpaid_amount": 0,
+            "external_resource_url": "https://www.mercadopago.com.br/sandbox/payments/1316217433/ticket?caller_id=669163663&payment_method_id=bolbradesco&payment_id=1316217433&payment_method_reference_id=10256525965&hash=107853c0-1122-4e6f-881e-e376965cbde4",
+            "installment_amount": 0,
+            "financial_institution": "bradesco",
+            "payable_deferral_period": null
+      },
+      "fee_details": [],
+      "charges_details": [],
+      "captured": true,
+      "binary_mode": false,
+      "call_for_authorize_id": null,
+      "statement_descriptor": null,
+      "card": {},
+      "notification_url": null,
+      "refunds": [],
+      "processing_mode": "aggregator",
+      "merchant_account_id": null,
+      "merchant_number": null,
+      "acquirer_reconciliation": [],
+      "point_of_interaction": {
+            "type": "UNSPECIFIED",
+            "business_info": {
+                  "unit": "online_payments",
+                  "sub_unit": "sdk"
+            }
+      },
+      "accounts_info": null,
+      "tags": null
+}

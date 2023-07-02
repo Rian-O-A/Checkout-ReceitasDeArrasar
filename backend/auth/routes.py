@@ -17,20 +17,11 @@ def home():
 def sendProduct():
     idPayment = request.json.get("idPayment")
     response = pesquisar_pagamento(idPayment)
-    if response[0] == 200:
-        responseEmail = enviar_email(response[1])
-        return jsonify({'Message': responseEmail[1]}), responseEmail[0]
-        
-        
     return jsonify({'Message': response[1]}), response[0]
 
 @auth_route.route('/process_payment', methods=['POST'])
 def add_income():
     request_values = request.get_json()
     payment = process_payment(request_values)
-    json.dump(payment, open('payment.json', 'w', encoding="UTF-8"), indent=6, ensure_ascii=False)
     response = pesquisar_pagamento(payment["id"])
-    if response[0] == 200:
-        enviar_email(response[1], None)
-        
     return jsonify(payment), response[0]
