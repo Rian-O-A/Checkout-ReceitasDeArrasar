@@ -58,12 +58,18 @@ const proccessPayment = (cardFormData) => {
             if (!result.hasOwnProperty("error_message")) {
                 document.getElementById("payment-id").innerText = result.id;
                 document.getElementById("payment-status").innerText = result.status;
+                if (result?.transaction_details?.external_resource_url) {
+                    window.location.replace(result?.transaction_details?.external_resource_url);
+                    redirect.style.display = 'block'
+                    let redirect = document.getElementById('redirectmsg')
+                }
                 if (result?.point_of_interaction?.transaction_data?.qr_code_base64) {
                     const qrcode = document.getElementById("qrcode-pix")
                     const pixkey = document.getElementById('pix-key')
                     qrcode.src = "data:image/png;base64," + result?.point_of_interaction?.transaction_data?.qr_code_base64;
                     qrcode.style.display = "block"
                     pixkey.innerHTML = "<b>Chave Pix:</b> " + result?.point_of_interaction?.transaction_data?.qr_code
+                    pixkey.style.display = 'block'
                 }
                 $('.container__payment').fadeOut(500);
                 setTimeout(() => { $('.container__result').show(500).fadeIn(); }, 500);

@@ -23,7 +23,7 @@
             Ebook feito com amor e dedicação para todos os amantes e curiosos na culinaria!
           </p>
         </div>
-        <div class="content" style="padding: 0;">
+        <div class="content" style="padding: 0 10px;">
           <div class="row">
             <div class="col-md-12 col-lg-8">
               <div class="items">
@@ -72,7 +72,7 @@
       </div>
     </section>
     <!-- Payment -->
-    <section class="payment-form dark" style="padding: 0;" >
+    <section class="payment-form dark" style="padding: 0;">
       <div class="container__payment">
         <div class="block-heading">
           <h2>Cartão de Credito</h2>
@@ -81,7 +81,7 @@
           </p>
         </div>
         <div class="form-payment">
-          <div class="products">
+          <div class="products" style="padding: 0 30px;">
             <h2 class="title">Sumario</h2>
             <div class="item">
               <span class="price" id="summary-price"></span>
@@ -108,7 +108,7 @@
       </div>
     </section>
     <!-- Result -->
-    <section class="shopping-cart dark" >
+    <section class="shopping-cart dark">
       <div class="container container__result">
         <div class="block-heading">
           <h2>Resultado do Pagamento</h2>
@@ -122,13 +122,17 @@
             <br />
             <p><b>ID: </b><span id="payment-id"></span></p>
             <p><b>Status: </b><span id="payment-status"></span></p>
-            <p><b>Detalhe: </b><span id="payment-detail"></span></p>
             <p><b>QR Code:</b></p>
-            <img id="qrcode-pix" src="data:image/png;base64," style="display: none;max-width: 40%;" />
-            <p id="pix-key" style="max-width: 40%; background-color: white; word-wrap: break-word; padding: 10px;">
+            <img id="qrcode-pix" src="data:image/png;base64," style="display: none;max-width: 60%;" />
+            <p id="pix-key"
+              style="display: none; max-width: 80%; background-color: white; word-wrap: break-word; padding: 10px;">
               <b>Chave
-                Pix:</b></p>
+                Pix:</b>
+            </p>
             <br />
+            <p id="redirectmsg"
+              style="display: none;font-size: x-large; width: 90%; padding: 20px; background-color: white;">Agora você
+              será redirecionado.</p>
           </div>
         </div>
       </div>

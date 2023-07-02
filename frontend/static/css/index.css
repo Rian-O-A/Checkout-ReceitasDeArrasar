@@ -210,6 +210,7 @@ main {
     padding: 0;
     max-width: 600px;
     margin: auto;
+    padding: 0 20px;
 }
 
 .payment-form .title {
@@ -324,6 +325,8 @@ footer p a:hover {
     text-decoration: none;
 }
 
+
+
 @media (min-width: 576px) {
     .payment-form .title {
         font-size: 1.2em;
@@ -372,10 +375,17 @@ footer p a:hover {
     }
 }
 
+#mercadopago-bricks-contaner__PaymentCard{
+    margin: 20px 0;
+}
+
 @media (max-width: 576px) {
     footer {
-        padding: 5% 1% 15% 1%;
         height: 55px;
+        margin: 0 auto;
+    }
+    .footer-text {
+        display: none !important;
     }
 
     footer p {
@@ -384,9 +394,9 @@ footer p a:hover {
         margin-bottom: 0;
     }
     .footer_text {
-        margin: 0 0 0 45%;
         width: 180px;
-        position: absolute
+        position: absolute;
+        display: none;
     }
 
     .footer_logo {
