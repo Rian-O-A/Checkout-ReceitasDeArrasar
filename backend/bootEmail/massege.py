@@ -12,7 +12,7 @@ def corpo_email(parametro):
 
     <p>📚 Para acessar seu ebook "<b>Receitas para Arrasar</b>", siga as instruções abaixo: </p>
 
-    <p>1️⃣ Verifique seu email cadastrado durante o processo de compra, pois o ebook foi enviado para você como um anexo ou clique 👉 <a href="https://drive.google.com/file/d/1S56mE97QKgOEbfBUFx5d2qywV6hQnr7g/view?usp=drive_link" target="_blank">aqui</a>. Certifique-se de verificar sua caixa de entrada, incluindo a pasta de spam ou lixo eletrônico, caso não encontre o email principal.</p>
+    <p>1️⃣ Verifique seu email cadastrado durante o processo de compra, pois o ebook foi enviado para você como um anexo ou clique 👉 <a href="https://drive.google.com/file/d/1y7dDKPTvSj_idevrh4drjjVANYmfeUKG/view?usp=sharing" target="_blank">aqui</a>. Certifique-se de verificar sua caixa de entrada, incluindo a pasta de spam ou lixo eletrônico, caso não encontre o email principal.</p>
 
     <p>2️⃣ Faça o download do ebook "<b>Receitas para Arrasar</b>" anexado ao email. Certifique-se de ter um dispositivo compatível para leitura de ebooks, como um smartphone, tablet, e-reader ou computador.</p>
 
