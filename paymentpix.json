@@ -1,0 +1,15 @@
+{
+      "status": 400,
+      "response": {
+            "message": "Collector user without key enabled for QR render",
+            "error": "bad_request",
+            "status": 400,
+            "cause": [
+                  {
+                        "code": 13253,
+                        "description": "Collector user without key enabled for QR render",
+                        "data": "02-07-2023T23:16:13UTC;f81a0d20-88cd-4496-9c7d-5f9dc76f3492"
+                  }
+            ]
+      }
+}

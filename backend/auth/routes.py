@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request, render_template
 from backend.Payment.obterPagamen import pesquisar_pagamento
 from backend.Payment.processPayment import process_payment 
-from backend.dataBase.manager import bankDate
+from backend.Payment.controlerPeding import statusPayment
 from backend.credentials import public_key
 import json
 
@@ -23,16 +23,15 @@ def sendProduct():
 def add_income():
     request_values = request.get_json()
     payment = process_payment(request_values)
-    response = pesquisar_pagamento(payment["id"])
-    bankDate.send({"id": str(payment["id"]), "payment_method_id": payment['payment_method_id'], "pendingDays": 1})
     
+    response = pesquisar_pagamento(payment["id"])
     return jsonify(payment), response[0]
 
 
 @auth_route.route('/webhook', methods=['POST'])
-def add_income():
+def webhook():
     request_values = request.get_json()
-    json.dump(request_values, open('webhook.json', 'w', encoding="UTF-8"), indent=6, ensure_ascii=False)
     
+    statusPayment(request_values["data"]["id"], request_values["action"])
     
     return jsonify({"Message":"ok"}), 200

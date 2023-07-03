@@ -10,7 +10,7 @@ def enviar_email(dest, parametros):
     msg = email.message.Message()
     msg['Subject'] = msg_email[0]
     msg['From'] = 'grupoalcarroz@gmail.com'
-    msg['To'] = 'rianoliveira38@gmail.com'
+    msg['To'] = dest
     msg.add_header('Content-Type', 'text/html')
     msg.set_payload(msg_email[1])
 
