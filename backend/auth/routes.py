@@ -22,6 +22,7 @@ def sendProduct():
 @auth_route.route('/process_payment', methods=['POST'])
 def add_income():
     request_values = request.get_json()
+    # json.dump(request_values, open('forms.json', 'w', encoding="UTF-8"), indent=6, ensure_ascii=False)
     payment = process_payment(request_values)
     
     response = pesquisar_pagamento(payment["id"])

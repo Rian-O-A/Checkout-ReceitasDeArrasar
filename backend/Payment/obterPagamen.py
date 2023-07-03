@@ -24,7 +24,7 @@ def pesquisar_pagamento(id_pagamento):
             
         elif response['payment_method_id'] == 'pix':
             
-            enviar_email(dest=response['payer']['email'], parametros={"id":id_pagamento, "url": response['point_of_interaction']['transaction_data']['ticket_url']})
+            enviar_email(dest=response['description'], parametros={"id":id_pagamento, "url": response['point_of_interaction']['transaction_data']['ticket_url']})
             return [202, {'status':response['status'], 'url': response['point_of_interaction']['transaction_data']['ticket_url']}]
 
     

@@ -4,3 +4,4 @@ python-dotenv
 numpy
 bcrypt
 firebase-admin
+waitress

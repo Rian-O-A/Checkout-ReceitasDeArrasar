@@ -9,7 +9,10 @@ def statusPayment(id_pagamento, action):
     
     if action != 'payment.created':
         if 'approved' == response['status']:
-            enviar_email(response["payer"]["email"], None)
+            if response["payment_method_id"] == "pix":
+                enviar_email(response["description"], None)
+            else:   
+                enviar_email(response["payer"]["email"], None)
           
         
         elif 'pending' == response['status']:
