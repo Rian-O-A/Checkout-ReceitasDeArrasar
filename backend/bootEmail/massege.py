@@ -4,7 +4,7 @@ def corpo_email(parametro):
     
     if parametro == None:
         model =['📧🍳 Ebook "Receitas para Arrasar" do Grupo Alcarroz Entregue! 🍳📧', """
-        <p>🎉 Parabéns! O seu ebook "<b><b>Receitas para Arrasar</b></b>" do Grupo Alcarroz já está em suas mãos! Agora você está pronto para se tornar um mestre na cozinha e surpreender seus amigos e familiares com pratos deliciosos.</p>
+        <p>🎉 Parabéns! O seu ebook "<b>Receitas para Arrasar</b>" do Grupo Alcarroz já está em suas mãos! Agora você está pronto para se tornar um mestre na cozinha e surpreender seus amigos e familiares com pratos deliciosos.</p>
 
     <p>📖 O ebook "<b>Receitas para Arrasar</b>" é uma coleção abrangente de receitas cuidadosamente selecionadas pelo Grupo Alcarroz. Com ele, você terá acesso a uma variedade de pratos incríveis que irão despertar seu lado culinário e levar suas habilidades na cozinha a um novo patamar.</p>
 
