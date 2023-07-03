@@ -3,8 +3,6 @@ from backend.Payment.obterPagamen import pesquisar_pagamento
 from backend.Payment.processPayment import process_payment 
 from backend.Payment.controlerPeding import statusPayment
 from backend.credentials import public_key
-import json
-
 
 auth_route = Blueprint('auth', __name__)
 
