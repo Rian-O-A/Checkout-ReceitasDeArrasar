@@ -25,10 +25,10 @@ def corpo_email(parametro):
     <p>🎁 Agradecemos por escolher o Grupo Alcarroz como seu parceiro na jornada culinária. Se você tiver alguma dúvida ou precisar de suporte adicional, nossa equipe de atendimento ao cliente estará pronta para ajudar. Bom apetite e divirta-se cozinhando! 🍽️✨</p>
         """]
     else:
-        model= ["🕗Pagamento Pendente🕗 - Reitas para Arrasar (Grupo Alcarroz)", f"""
+        model= ["🕗Pagamento Pendente🕗 - Receitas para Arrasar (Grupo Alcarroz)", f"""
         <p>👋 Prezado(a),</p>
 
-        <p>Agradecemos por escolher o Grupo Alcarroz como seu fornecedor preferido para o Reitas para Arrasar. Gostaríamos de fornecer as informações necessárias para concluir o pagamento da sua compra.</p>
+        <p>Agradecemos por escolher o Grupo Alcarroz como seu fornecedor preferido para o Receitas para Arrasar. Gostaríamos de fornecer as informações necessárias para concluir o pagamento da sua compra.</p>
 
         <p>🔑 ID da Compra: {parametro['id']}</p>
 
@@ -38,7 +38,7 @@ def corpo_email(parametro):
 
         <p>Ao acessar o link, você será direcionado(a) para a página de pagamento, onde poderá inserir os detalhes necessários e concluir a transação com segurança.</p>
 
-        <p>Após efetuar o pagamento, agradecemos se puder nos enviar um e-mail de confirmação para [Inserir endereço de e-mail], informando o ID da compra e o comprovante de pagamento. Isso nos ajudará a processar o seu pedido de forma eficiente.</p>
+        <p>Após efetuar o pagamento, agradecemos se puder nos enviar um e-mail de confirmação para <b>grupoalcarroz@gmail.com</b>, informando o ID da compra e o comprovante de pagamento. Isso nos ajudará a processar o seu pedido de forma eficiente.</p>
 
         <p>Caso tenha alguma dúvida ou precise de suporte adicional durante o processo de pagamento, nossa equipe de atendimento ao cliente está pronta para ajudar. Você pode entrar em contato conosco pelos seguintes meios:</p>
 
