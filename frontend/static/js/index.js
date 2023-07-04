@@ -43,7 +43,6 @@ async function loadPaymentForm(type) {
 };
 
 const proccessPayment = (cardFormData) => {
-    console.log(cardFormData)
     fetch("/process_payment", {
         method: "POST",
         headers: {
