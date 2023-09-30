@@ -6,7 +6,6 @@ load_dotenv()
 
 token = os.environ['access_token']
 password = os.environ['password']
-public_key = os.environ['PUBLIC_KEY']
 
 credDataBase = {"type": os.environ['type'],
     "project_id": os.environ['project_id'],

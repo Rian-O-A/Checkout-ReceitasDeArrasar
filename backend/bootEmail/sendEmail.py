@@ -4,7 +4,7 @@ from backend.credentials import password
 
 
 
-def enviar_email(dest, parametros):
+def enviar_email(dest, parametros=None):
    
     msg_email = corpo_email(parametros)
     msg = email.message.Message()
